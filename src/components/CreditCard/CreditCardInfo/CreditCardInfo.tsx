@@ -2,21 +2,33 @@ import CreditCardInfoPlaceholder from "./CreditCardInfoPlaceholder";
 import ccChip from "../../../../public/cc-chip.svg";
 import Image from "next/image";
 import CreditCardNumber from "./CreditCardNumber";
+import { InputValuesType } from "@/hooks/useFormInput";
 
-const CreditCardInfo = () => {
+type CreditCardInfoType = {
+  inputValues: InputValuesType;
+};
+
+const CreditCardInfo = ({ inputValues }: CreditCardInfoType) => {
+  const { number, name, expiration, cvc } = inputValues;
   return (
     <div className="grid gap-2">
-      <CreditCardNumber />
+      <CreditCardNumber number={ number } />
 
-      <CreditCardInfoPlaceholder  label="Nome do titular" >
+      <CreditCardInfoPlaceholder
+        value={ name }
+        label="Nome do titular" >
         FULANO DA SILVA
       </CreditCardInfoPlaceholder>
 
       <div className=" flex justify-between items-center">
-        <CreditCardInfoPlaceholder label="Expiração" >
+        <CreditCardInfoPlaceholder
+          value={ expiration }
+          label="Expiração" >
           02/32
         </CreditCardInfoPlaceholder>
-        <CreditCardInfoPlaceholder label="CVC" >
+        <CreditCardInfoPlaceholder
+          value={ cvc }
+          label="CVC" >
           123
         </CreditCardInfoPlaceholder>
         <Image src={ ccChip } alt="ícone de chip de cartão de crédito" />
