@@ -1,6 +1,5 @@
-import * as Style from "../CreditCardWrapper.style";
 import CreditCardInfoPlaceholder from "./CreditCardInfoPlaceholder";
-import ccChip from '../../../../public/cc-chip.svg';
+import ccChip from "../../../../public/cc-chip.svg";
 import Image from "next/image";
 import CreditCardNumber from "./CreditCardNumber";
 
@@ -13,7 +12,7 @@ const CreditCardInfo = () => {
         FULANO DA SILVA
       </CreditCardInfoPlaceholder>
 
-      <Style.CreditCardExtraWrapper>
+      <div className=" flex justify-between items-center">
         <CreditCardInfoPlaceholder label="Expiração" >
           02/32
         </CreditCardInfoPlaceholder>
@@ -21,7 +20,7 @@ const CreditCardInfo = () => {
           123
         </CreditCardInfoPlaceholder>
         <Image src={ ccChip } alt="ícone de chip de cartão de crédito" />
-      </Style.CreditCardExtraWrapper>
+      </div>
 
     </div>
   );

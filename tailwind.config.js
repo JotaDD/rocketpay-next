@@ -18,7 +18,6 @@ module.exports = {
       },
       dropShadow: {
         'j-shadow': '0 0.25rem 0.25rem rgb(22 22 22 / 16%);',
-    
       }
     },
   },
